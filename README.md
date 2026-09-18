@@ -2,7 +2,7 @@
 
 稼働している自分自身の SolidStart 製屋号サイトを、Astro + Solid / Svelte / Vue へリプレイスした実験リポジトリです。
 なお、マシン内での node_modules の肥大化を抑えるため、Solid / Svelte / Vue を同居させており、実験なので手動で切り替える簡易的な方法です。
-Solid / Svelte / Vue は、自作の SSR 安全なグローバルストア機構を利用側で同じ処理なのですが、React は状態管理の利用方法に依存するので、Astro + React のみ別リポジトリになります。
+Solid / Svelte / Vue は、自作の SSR 安全なグローバルストア機構を利用側で同じ処理なのですが、React は状態管理の利用方法に依存するので、Astro + React のみ別リポジトリになっています。
 
 **Note:** 本リポジトリは、実験場という性質であるため Issues 及び Pull Requests は受け付けておりません。
 
@@ -31,6 +31,7 @@ Solid / Svelte / Vue は、自作の SSR 安全なグローバルストア機構
 - [Qwik 版](https://github.com/wings1685/flugel-website-qwik)
 - [Next.js 版](https://github.com/wings1685/flugel-website-next)
 - [Nuxt 版](https://github.com/wings1685/flugel-website-nuxt)
+- [Astro + React 版](https://github.com/wings1685/flugel-website-astro-react)
 
 ## Related Articles
 
@@ -51,7 +52,6 @@ src/
 │ ├─ types/
 ├─ components/
 │ ├─ integrations/
-│ │ ├─ _models/
 │ │ ├─ solid/
 │ │ ├─ svelte/
 │ │ ├─ vue/
@@ -68,5 +68,5 @@ src/
 │ │ ├─ Sections/
 │ │ ├─ Typography/
 │ │ ├─ Utils/
-├─ routes/
+├─ pages/
 ```
