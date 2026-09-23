@@ -10,7 +10,14 @@
 	const { selectedMonth, setSelectedMonth } = useStore('selectedMonth');
 
 	const elBg = useTemplateRef('elBg');
-	const getSrcset = (month?: Months) => month ? `/images/bg/${ month }.webp 1920w, /images/bg/${ month }_sp.webp 768w` : '';
+	const imagePath = '/images/bg/';
+	const getImagePc = (month?: Months) => month ? `${imagePath}${ month }.webp` : '';
+	const getImageSp = (month?: Months) => month ? `${imagePath}${ month }_sp.webp` : '';
+	const getSrcset = (month?: Months) => {
+		if (import.meta.env.SSR || !month) return '';
+
+		return window.innerWidth <= 750 ? getImageSp(month) : getImagePc(month);
+	};
 
 	onMounted(() => {
 		const month = months[(new Date()).getMonth()];
@@ -44,7 +51,10 @@
 </script>
 <template>
 	<div id="bg">
-		<img ref="elBg" alt="" :srcset="getSrcset(currentMonth)" data-testid="bg" />
-		<img v-if="selectedMonth()" id="selected_bg" :srcset="getSrcset(selectedMonth())" alt="" />
+		<picture>
+			<source media="(max-width: 750px)" :srcset="getImageSp(currentMonth)" />
+			<img ref="elBg" :src="getImagePc(currentMonth)" alt="" data-testid="bg" />
+		</picture>
+		<img v-if="selectedMonth()" id="selected_bg" :src="getSrcset(selectedMonth())" alt="" />
 	</div>
 </template>

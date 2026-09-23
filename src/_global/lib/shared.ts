@@ -19,6 +19,4 @@ export const monthData = {
 export const months = Object.keys(monthData);
 export type Months = typeof months[number];
 
-export const blogEndpoint = 'https://wings.hatenablog.com';
-
 export const integration: 'solid' | 'svelte' | 'vue' = 'solid';
