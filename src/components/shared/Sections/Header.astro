@@ -1,31 +1,25 @@
 ---
 import { GlassButton, NavCheckbox } from "@/components/integrations";
 import { Icon } from "@/components/shared/Utils";
-import type { DeepGuard } from "@/_global/types/types";
 import "./Header.sass";
 
-type Props = {
-	path: string;
-};
-
-const props: DeepGuard<Props> = Astro.props;
-const path = props.path.replace(/\//g, '');
+const currentPath = Astro.url.pathname.replace(/\//g, '');
 ---
 <header>
 	<NavCheckbox />
-	<GlassButton as="a" href="/" class={ path === '' ? 'active' : undefined } client:load>
+	<GlassButton as="a" href="/" class={ currentPath === '' ? 'active' : undefined } client:load>
 		<p>
 			<span>Home</span>
 		</p>
 		<Icon type="home" />
 	</GlassButton>
-	<GlassButton as="a" href="/archives/" class={ path === 'archives' ? 'active' : undefined } client:load>
+	<GlassButton as="a" href="/archives/" class={ currentPath === 'archives' ? 'active' : undefined } client:load>
 		<p>
 			<span>Archives</span>
 		</p>
 		<Icon type="folder" />
 	</GlassButton>
-	<GlassButton as="a" href="/types/" class={ path === 'types' ? 'active' : undefined } client:load>
+	<GlassButton as="a" href="/types/" class={ currentPath === 'types' ? 'active' : undefined } client:load>
 		<p>
 			<span>Types</span>
 		</p>
