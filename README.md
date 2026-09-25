@@ -36,7 +36,6 @@ Solid / Svelte / Vue は、自作の SSR 安全なグローバルストア機構
 ## Related Articles
 
 - [同一サイトの 9 フレームワークパターンでのリプレイス祭](https://wings.hatenablog.com/entry/replaceFestival)
-- [【極限編】同一 Astro 上で Solid / Svelte / Vue / React それぞれの処理速度を計測してみた（Qwik は無し）](https://wings.hatenablog.com/entry/benchmarkExtreme)
 - [Meta 生成機構祭](https://wings.hatenablog.com/entry/metaFestival)
 
 ## Folder Map
