@@ -7,6 +7,6 @@ export default function Copyright() {
 	onMount(() => setYear((new Date()).getFullYear()));
 
 	return (
-		<p class="copyright">{ flugel } &copy; { year() }</p>
+		<p class="copyright monospace">{ flugel } &copy; { year() }</p>
 	)
 }

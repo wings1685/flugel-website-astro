@@ -8,4 +8,4 @@
 		year = (new Date()).getFullYear()
 	});
 </script>
-<p class="copyright">{ flugel } &copy; { year }</p>
+<p class="copyright monospace">{ flugel } &copy; { year }</p>
