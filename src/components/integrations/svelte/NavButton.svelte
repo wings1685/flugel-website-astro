@@ -22,4 +22,4 @@
 		setSelectedMonth(key);
 	};
 </script>
-<button onclick={ (e: Event) => handleClick(e, props.month) } class={[ 'glass mini is_dark btn_nav', props.class ]}>{ props.name }</button>
+<button onclick={ (e: Event) => handleClick(e, props.month) } class={[ 'glass mini is_dark btn_nav', props.class ]} data-testid="btn-nav" data-month={ props.month }>{ props.name }</button>

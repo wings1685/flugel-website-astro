@@ -19,7 +19,8 @@ export default function NavButton(props: DeepGuard<Props>) {
 
 		setSelectedMonth(key);
 	};
+
 	return (
-		<button onClick={ (e: Event) => handleClick(e, props.month) } class="glass mini is_dark btn_nav" classList={{ ...propsClass(props) }}>{ props.name }</button>
+		<button onClick={ (e: Event) => handleClick(e, props.month) } class="glass mini is_dark btn_nav" classList={{ ...propsClass(props) }} data-testid="btn-nav" data-month={ props.month }>{ props.name }</button>
 	)
 }
